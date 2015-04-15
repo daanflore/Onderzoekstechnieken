@@ -1,4 +1,6 @@
 \documentclass[conference]{IEEEtran}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage[dutch]{babel}
 
 \begin{document}
@@ -19,7 +21,7 @@ The abstract goes here.
 \IEEEpeerreviewmaketitle
 
 \section{Introductie}
-Voor het kaartspel blackjack gaan wij de 2 meest bekende strategieën namelijk basic en perfect strategie vergelijken en kijken hoe we de basic kunnen aanpassen om de winst te verhogen.
+Voor het kaartspel blackjack gaan wij de 2 meest bekende strategieën namelijk basic en perfect strategie vergelijken en kijken hoe we de basic kunnen aanpassen om de winst te verhogen. Aanvankelijk spelen een verzameling van willekeurig gegenereerde spelers 1000 handen van blackjack.
 
  
 \hfill April 20, 2015
@@ -30,6 +32,83 @@ Voor het kaartspel blackjack gaan wij de 2 meest bekende strategieën namelijk b
 De 2 strategieën die wij gaan gebruiken zijn de basic en perfect strategy pattern. We hebben deze gekozen omdat die het meest gekend zijn.
 
 \subsection{Hoe worden de strategieën in de praktijk toegepast?}
+Elke blackjack spel heeft een basisstrategie, die het spelen een hand van een totale waarde is tegen elke dealer's up-kaart, die het minste geld verliest aan het huis op de lange termijn.
+
+
+
+
+
+\begin{table}[h]
+\caption{Hard totals (excluding pairs) - Basic strategy}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{10}{c|}{Dealer's face-up card} \\ \cline{2-11} 
+\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}} & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+21 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+20 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+19 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+18 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+17 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+16 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{34CDF9}SU/H & \cellcolor[HTML]{34CDF9}SU/H & \cellcolor[HTML]{34CDF9}SU/H \\ \hline
+15 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{34CDF9}SU/H & \cellcolor[HTML]{FE0000}H \\ \hline
+14 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+13 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+12 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+11 & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FE0000}H \\ \hline
+10 & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+9 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+8 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+7 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+6 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+5 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+\caption{Soft totals - Basic strategy}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{10}{c|}{Dealer's face-up card} \\ \cline{2-11} 
+\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}} & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+21 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+20 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+19 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+18 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{F8FF00}D/S & \cellcolor[HTML]{F8FF00}D/S & \cellcolor[HTML]{F8FF00}D/S & \cellcolor[HTML]{F8FF00}D/S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+17 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+16 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+15 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+14 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+13 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+\caption{Pairs - Basic strategy}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{10}{c|}{Dealer's face-up card} \\ \cline{2-11} 
+\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}} & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+A,A & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H \\ \hline
+20 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+18 & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+16 & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H \\ \hline
+14 & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+12 & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+10 & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+8 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+6 & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+4 & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+\end{tabular}
+\end{table}
+
 
 \subsection{Hoe evolueerden de strategieën doorheen de tijd?}
 
