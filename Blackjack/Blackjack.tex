@@ -1,63 +1,138 @@
 \documentclass[conference]{IEEEtran}
 
 \usepackage[dutch]{babel}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
 
 \begin{document}
 
 \title{Project blackjack}
 
-\author{
-\IEEEauthorblockN{Kavoos Boloorchi}
-\IEEEauthorblockA{
-Hogeschool Gent\\
+\author{\IEEEauthorblockN{Seyed Kavoos Boloorchi, Daan Flor\'e, Robin Lodrigo en Jonas Wallays}
+\IEEEauthorblockA{Hogeschool Gent\\
 Bedrijf en organisatie\\
-Email: seyedkavoos.boloorchi.u1660@student.hogent.be}
-\and
-\IEEEauthorblockN{Daan Flor\'e}
-\IEEEauthorblockA{
-Hogeschool Gent\\
-Bedrijf en organisatie\\
-Email: daan.flore.u8852@student.hogent.be}
-\and
-\IEEEauthorblockN{Robin Lodrigo}
-\IEEEauthorblockA{
-Hogeschool Gent\\
-Bedrijf en organisatie\\
-Email: robin.lodrigo.u8341@student.hogent.be}
-\and
-\IEEEauthorblockN{Jonas Wallays}
-\IEEEauthorblockA{
-Hogeschool Gent\\
-Bedrijf en organisatie\\
-Email: jonas.wallays.u8978@student.hogent.be}}
+E-mail: seyedkavoos.boloorchi.u1660@student.hogent.be,
+daan.flore.u8852@student.hogent.be,\\
+robin.lodrigo.u8341@student.hogent.be,
+jonas.wallays.u8978@student.hogent.be
+}}
+\date{April 20, 2015}
 
 
 \maketitle
 
 \begin{abstract}
-The abstract goes here.
+Voor het opleidingsonderdeel onderzoekstechnieken in de richting toegepaste informatica aan de Hogeschool Gent, gingen we na of er een manier is om het casino te verslaan bij een spelletje blackjack. Dit onderzochten we door enkele (reeds bestaande) strategie\"{e}n uit te testen en we gingen na hoe we de strategie\"{e}n kunnen verbeteren.
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
 
-\section{Introduction}
-This demo file is intended to serve as a ``starter file''
-for IEEE conference papers produced under \LaTeX\ using
-IEEEtran.cls version 1.7 and later.
+\section{Introductie}
+Sinds het ontstaan van blackjack is er reeds veel onderzoek verricht naar een ultieme strategie waarmee men het spelletje zo goed als altijd zou kunnen winnen. Het grootste deel van deze onderzoeken stellen voorop dat deze strategie niet zou bestaan. Er bestaan wel andere strategie\"{e}n die de kans op winst zouden verhogen. Hiervan zijn de basic en perfect strategie ongetwijfeld de meest gekende. We besloten deze twee strategie\"{e}n te vergelijken door gebruik te maken van simulators. Dit doen we door aanvankelijk 1000 handen van blackjack te spelen door willekeurig gegenereerde spelers. We probeerden deze strategie\"{e}n ook aan te passen zodat, statistisch gezien, de winst verhoogt. 
 
-I wish you the best of success.
+\section{Strategie met de meeste kans op winst}
+\subsection{Onderzochte strategie\"{e}n}
+Voor dit onderzoek werkten we met de basic en de perfect strategie.
+\subsubsection{Basic strategie}
+De basic strategie - de meest algemene en gebruikte strategie - is ontstaan door een computer miljoenen simulaties van het spel te laten spelen. Hieruit kon men concluderen wat een speler in het algemeen het best zou doen in verschillende situaties. De resultaten zijn gebaseerd op de kaarten die de dealer toont en de kaarten die de speler heeft. Dit resulteerde in de basic strategy card. Deze strategie is de eerste die wordt geleerd wanneer men professioneel blackjack gaat spelen
 
-\hfill mds
- 
-\hfill January 11, 2007
+\subsubsection{Perfect strategie}
+De perfect strategie wordt gebruikt door iets meer ervaren spelers, en is een uitbreiding/aanpassing van de basic strategie.
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+\subsection{Strategie\"{e}n in de praktijk}
+De basic strategie houdt rekening met het totaal van de kaarten die de dealer heeft omgedraaid en het totaal van de kaarten van de speler. Zo moet men in de praktijk op bepaalde situaties verschillend reageren, zoals weergegeven in onderstaande tabellen.
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
 
-\section{Conclusion}
+
+
+\begin{table}[h]
+\caption{Hard totals (excluding pairs) - Basic strategy}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{10}{c|}{Dealer's face-up card} \\ \cline{2-11} 
+\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}} & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+21 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+20 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+19 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+18 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+17 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+16 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{34CDF9}SU/H & \cellcolor[HTML]{34CDF9}SU/H & \cellcolor[HTML]{34CDF9}SU/H \\ \hline
+15 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{34CDF9}SU/H & \cellcolor[HTML]{FE0000}H \\ \hline
+14 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+13 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+12 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+11 & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FE0000}H \\ \hline
+10 & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+9 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FCFF2F}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+8 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+7 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+6 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+5 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+\caption{Soft totals - Basic strategy}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{10}{c|}{Dealer's face-up card} \\ \cline{2-11} 
+\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}} & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+21 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+20 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+19 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+18 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{F8FF00}D/S & \cellcolor[HTML]{F8FF00}D/S & \cellcolor[HTML]{F8FF00}D/S & \cellcolor[HTML]{F8FF00}D/S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+17 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+16 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+15 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+14 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+13 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+\caption{Pairs - Basic strategy}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{10}{c|}{Dealer's face-up card} \\ \cline{2-11} 
+\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}} & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+A,A & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H \\ \hline
+20 & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+18 & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
+16 & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H \\ \hline
+14 & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+12 & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FFC702}SP/S & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+10 & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{F8FF00}D/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+8 & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+6 & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+4 & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FFC702}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+\subsection{Evolutie van de strategie\"{e}n}
+
+\subsection{Hoe kunnen we de strategie\"{e}n verbeteren?}
+\subsubsection{Basic strategie}
+Na het onderzoeken van de strategie hebben we kunnen concluderen dat de strategie geoptimaliseerd kan worden om meer winst te maken.
+We hebben onze aangepaste tabel in een simulator gestoken en kunnen zien dat we met onze aanpassingen meer winst konden maken op langere termijn.
+
+hier komen 2 afbeelding oude tabel nieuwe en dan resultaten
+\subsubsection{Perfect strategie}
+
+\subsection{ Waar zal voor elke strategie de kans op winst stagneren, waar ligt het optimale punt van die bepaalde strategie?}
+Voor bijde strategieën is het wel duidelijk dat de kans op winst vergroot als het aantal gespeelde rondes verhoogd, wat we zien is dat bij 100 rondes er nog altijd verlies kan gemaakt worden omdat het ook nog altijd afhangt van de kaarten die de speler krijgt maar als we dan meer rondes beginnen te spelen zoals 1000 kunnen we wel zien dat er winst begint te komen Hierdoor kunnen we zeggen dat de resultaten wel lichtjes beïnvloedbaar zijn maar dat men daar een groot aantal rondes voor moet spelen eer het resultaat zichtbaar wordt. 
+\section{Conclusie}
 The conclusion goes here.
 
 \section*{Acknowledgment}
@@ -73,5 +148,3 @@ H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
 \end{thebibliography}
 
 \end{document}
-
-
