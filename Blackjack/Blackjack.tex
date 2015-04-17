@@ -4,6 +4,9 @@
 \usepackage{multirow}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
+\usepackage{dblfloatfix}
+\usepackage{fixltx2e}
+
 
 
 \begin{document}
@@ -47,7 +50,8 @@ De basic strategie houdt rekening met het totaal van de kaarten die de dealer he
 
 
 
-\begin{table}[h]
+\begin{table}[htbp]
+\setlength{\tabcolsep}{3pt}
 \caption{Basic strategie}
 \tiny
 \centering
@@ -96,8 +100,8 @@ De basic strategie houdt rekening met het totaal van de kaarten die de dealer he
 \textbf{4} & \cellcolor[HTML]{F8FF00}SP/H & \cellcolor[HTML]{F8FF00}SP/H & \cellcolor[HTML]{F8FF00}SP/H & \cellcolor[HTML]{F8FF00}SP/H & \cellcolor[HTML]{F8FF00}SP/H & \cellcolor[HTML]{F8FF00}SP/H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
 \end{tabular}
 \end{table}
-
-\begin{table}[h]
+\begin{table}[htbp]
+\setlength{\tabcolsep}{3pt}
 \caption{Perfect strategy}
 \tiny
 \centering
@@ -147,7 +151,35 @@ De basic strategie houdt rekening met het totaal van de kaarten die de dealer he
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+
+
+
+
+
+
+
+\subsection{Evolutie van de strategie\"{e}n}
+
+\subsection{Hoe kunnen we de strategie\"{e}n verbeteren?}
+\subsubsection{Basic strategie}
+Na het onderzoeken van de Basic strategie hebben we gepoogd deze strategie aan te passen met do hoop om een strategie te krijgen die een beter resultaat zou leveren op een kortere termijn want we wouden de situatie in een casino na bootsen. Na verschillende pogingen te hebben ondernomen hadden we een mogelijke strategie gevonden waar het resultaat er veel belovend uit zag. 
+\begin{figure}[hb]
+    \centering
+    \includegraphics[scale=0.37]{BasicAAngepastGoedResultaat.png}
+    \caption{goed resultaat}
+\end{figure}
+
+\begin{figure}[hb]
+    \centering
+    \includegraphics[scale=0.37]{BasicAangepastSlechtsteResultaat.png}
+    \caption{Slecht resultaat}
+\end{figure}
+
+ Dit heeft er dan voor gezorgd dat de orginele versie de voorkeur bleef behouden. 
+ Maar na meerdere simulaties hebben we kunnen zien dat het resultaat inconsistent is. En dat er een groot verschillen zaten tussen het beste en slechtste resultaat. Zo hebben wij een schommeling van 30 euro kunnen waarnemen. In tegenstelling tot de orgineële versie waar de schommeling beperkt is gebleven tot 10 euro tussen het beste en slechtste resultaat. Het is dan ook door dit verschil tussen het beste en slechtste resultaat dat onze strategie minder aantrekkelijk maakt. We hebben dan ook kunnen besluiten dat het niet mogelijk is om deze strategie te verbeteren en daarbij een consistent resultaat te verkrijgen.
+
+\begin{table}[htbp]
+\setlength{\tabcolsep}{3pt}
 \caption{Aangepaste basic strategie}
 \tiny
 \centering
@@ -197,7 +229,11 @@ De basic strategie houdt rekening met het totaal van de kaarten die de dealer he
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+
+\subsubsection{Perfect strategie}
+Sinds deze strategie een verder gevorde strategie is van de basic hebben we hier met dezelfde aanpassingen gewerkt als bij de vorige. Hier zagen we snel dat deze strategie niet verbeterd kon worden omdat de winstmarge van de aangepaste versie gemiddeld 10 euro minder was dan die van de orgineele. Dit zorgde er dan ook voor dat deze versie direct werd afgekeurd. 
+\begin{table}[htbp]
+\setlength{\tabcolsep}{3pt}
 \caption{Aangepaste perfect strategie}
 \tiny
 \centering
@@ -247,23 +283,6 @@ De basic strategie houdt rekening met het totaal van de kaarten die de dealer he
 \end{tabular}
 \end{table}
 
-%\begin{figure*}[p]
-%    \centering
-%    \includegraphics[scale=0.37]{Grafieken.png}
-%    \caption{Bankroll}
-%\end{figure*}
-
-
-
-\subsection{Evolutie van de strategie\"{e}n}
-
-\subsection{Hoe kunnen we de strategie\"{e}n verbeteren?}
-\subsubsection{Basic strategie}
-Na het onderzoeken van de strategie hebben we kunnen concluderen dat de strategie geoptimaliseerd kan worden om meer winst te maken.
-We hebben onze aangepaste tabel in een simulator gestoken en kunnen zien dat we met onze aanpassingen meer winst konden maken op langere termijn.
-
-hier komen 2 afbeelding oude tabel nieuwe en dan resultaten
-\subsubsection{Perfect strategie}
 
 \subsection{ Waar zal voor elke strategie de kans op winst stagneren, waar ligt het optimale punt van die bepaalde strategie?}
 Voor bijde strategieën is het wel duidelijk dat de kans op winst vergroot als het aantal gespeelde rondes verhoogd, wat we zien is dat bij 100 rondes er nog altijd verlies kan gemaakt worden omdat het ook nog altijd afhangt van de kaarten die de speler krijgt maar als we dan meer rondes beginnen te spelen zoals 1000 kunnen we wel zien dat er winst begint te komen Hierdoor kunnen we zeggen dat de resultaten wel lichtjes beïnvloedbaar zijn maar dat men daar een groot aantal rondes voor moet spelen eer het resultaat zichtbaar wordt. 
