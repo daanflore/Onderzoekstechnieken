@@ -34,7 +34,7 @@ Voor het opleidingsonderdeel onderzoekstechnieken in de richting toegepaste info
 \IEEEpeerreviewmaketitle
 
 \section{Introductie}
-Sinds het ontstaan van blackjack is er reeds veel onderzoek verricht naar een ultieme strategie waarmee men het spelletje zo goed als altijd zou kunnen winnen. Het grootste deel van deze onderzoeken stellen voorop dat deze strategie niet zou bestaan. Er bestaan wel andere strategie\"{e}n die de kans op winst zouden verhogen. Hiervan zijn de basic en perfect strategie ongetwijfeld de meest gekende. We besloten deze twee strategie\"{e}n te vergelijken door gebruik te maken van simulators. Dit doen we door aanvankelijk 1000 handen van blackjack te spelen door willekeurig gegenereerde spelers. We probeerden deze strategie\"{e}n ook aan te passen zodat, statistisch gezien, de winst verhoogt. 
+Sinds het ontstaan van blackjack is er reeds veel onderzoek verricht naar een ultieme strategie waarmee men het spelletje zo goed als altijd zou kunnen winnen. Het grootste deel van deze onderzoeken stellen voorop dat deze strategie niet zou bestaan. Er bestaan wel andere strategie\"{e}n die de kans op winst zouden verhogen. Hiervan zijn de basic en perfect strategie ongetwijfeld de meest gekende. We besloten deze twee strategie\"{e}n te vergelijken door gebruik te maken van simulators. Dit doen we door aanvankelijk per strategie 10 verschillende simulaties te laten lopen weer er 1000 handen van blackjack worden gespeeld door willekeurig gegenereerde spelers. We probeerden deze strategie\"{e}n ook aan te passen zodat, statistisch gezien, de winst verhoogt. 
 
 \section{Strategie met de meeste kans op winst}
 \subsection{Onderzochte strategie\"{e}n}
@@ -163,85 +163,8 @@ De basic strategie houdt rekening met het totaal van de kaarten die de dealer he
  In 1953 werd de aanleg naar de basis strategie gelegd. Aangezien de dealer zich aan voorop gelegde regels moest houden, was men in staat om strategieën te ontwikkelen. In 1956 werden de ondervindingen voor het eerst uitgegeven. Een jaar later verscheen het eerste boek: “Playing Blackjack to Win”. 
 \subsection{Hoe kunnen we de strategie\"{e}n verbeteren?}
 \subsubsection{Basic strategie}
-Na het onderzoeken van de Basic strategie hebben we gepoogd deze strategie aan te passen met de hoop om een strategie te krijgen die een beter resultaat zou leveren op een kortere termijn want we wouden de situatie in een casino na bootsen. Na verschillende pogingen te hebben ondernomen hadden we een mogelijke strategie gevonden waar het resultaat er veel belovend uit zag. 
-\begin{table}[htbp]
-\caption{Goed resultaat}
-\tiny
-\centering
-\begin{tabular}{|
->{}l 
->{}r |}
-\hline
-\multicolumn{1}{|l|}{Number of decks} & 12 \\ \hline
-\multicolumn{1}{|l|}{Starting bankroll} & \$1000,00 \\ \hline
-\multicolumn{1}{|l|}{\# of hands to simulate} & 1000 \\ \hline
- &  \\ \hline
-\multicolumn{1}{|l|}{Ending bankroll} & \$1046,50 \\ \hline
-\multicolumn{1}{|l|}{Rate return} & 104,65\% \\ \hline
-\multicolumn{1}{|l|}{Profit/Loss per 100 hands} & \$4,65 \\ \hline
-\end{tabular}
-\end{table}
+Na het onderzoeken van de Basic strategie hebben we gepoogd deze strategie aan te passen met de hoop om een strategie te krijgen die een beter resultaat zou leveren op een kortere termijn want we wouden de situatie in een casino na bootsen. Na verschillende pogingen te hebben ondernomen hadden we een mogelijke strategie gevonden waar het resultaat er veel belovend uit zag.Zo hebben we een strategie gevonden waar het gemiddelde en de mediaan beter was dan het orgineel dit toont aan dat er meer winst wordt gemaakt. Het nadeel aan de gevonden strategie is dat de variantie en het bereik grotere getallen waren. Het bereik toont dan ook aan dat de grootste en kleinste waarde verder uit elkaar gaan liggen. We kunnnen dus zeggen met de data van de 10 simulaties die wij gekregen hebben het er een positief resultaat uit ziet maar voor met meer zekerheid te kunnen zeggen of de strategie zal verbetert kunnen worden zullen er eerst meer simulaties moeten gedaan worden maar die kunnen wie dan ook niet uitvoeren door de beperkte bronnen die wij ter beschiking hebben.
 
-
-
- 
-Maar na meerdere simulaties hebben we kunnen zien dat het resultaat inconsistent is. En dat er grote verschillen zaten tussen het beste en slechtste resultaat. Zo hebben wij een schommeling van 30 euro kunnen waarnemen. In tegenstelling tot de orgineële versie waar de schommeling beperkt is gebleven tot 10 euro tegenover het gemiddelde. Het is dan ook door dit verschil tussen het beste en slechtste resultaat dat onze strategie minder aantrekkelijk maakt. We hebben dan ook kunnen besluiten dat het niet mogelijk is om deze strategie te verbeteren en daarbij een consistent resultaat te verkrijgen.
-\begin{table}[htbp]
-\caption{Slecht resultaat}
-\tiny
-\centering
-\begin{tabular}{|
->{}l 
->{}r |}
-\hline
-\multicolumn{1}{|l|}{Number of decks} & 12 \\ \hline
-\multicolumn{1}{|l|}{Starting bankroll} & \$1000,00 \\ \hline
-\multicolumn{1}{|l|}{\# of hands to simulate} & 1000 \\ \hline
- &  \\ \hline
-\multicolumn{1}{|l|}{Ending bankroll} & \$1014,00 \\ \hline
-\multicolumn{1}{|l|}{Rate return} & 101,40\% \\ \hline
-\multicolumn{1}{|l|}{Profit/Loss per 100 hands} & \$1,40 \\ \hline
-\end{tabular}
-\end{table}
-\begin{table}[htbp]
-\setlength{\tabcolsep}{3pt}
-\caption{Aangepaste basic strategie}
-\tiny
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
- & \multicolumn{10}{c|}{\textbf{Dealer's face-up card}} \\ \cline{2-11} 
-\multirow{-2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}}} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} \\ \hline
-\multicolumn{11}{|c|}{\textbf{Hard totals (excluding pairs)}} \\ \hline
-\textbf{21} & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S & \cellcolor[HTML]{32CB00}S \\ \hline
-\textbf{12} & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
-
-\end{tabular}
-\end{table}
-
-
-\subsubsection{Perfect strategie}
-Sinds deze strategie een verder gevorde strategie is van de basic hebben we hier met dezelfde aanpassingen gewerkt als bij de vorige. Hier zagen we snel dat deze strategie niet verbeterd kon worden omdat de winstmarge van de aangepaste versie gemiddeld 10 euro minder was dan die van de orginele. We zagen ook bij het gemiddelde dat hier de winst veel lager lag dan bij de orginele strategie. Dit komt om dat deze strategie een verder gevorde versie is van de basic en dus ook beter uitgewerkt. Dit zorgde er dan ook voor dat deze versie direct werd afgekeurd.  
-\begin{table}[htbp]
-\setlength{\tabcolsep}{3pt}
-\caption{Aangepaste rij in perfect strategie}
-\tiny
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
- & \multicolumn{10}{c|}{\textbf{Dealer's face-up card}} \\ \cline{2-11} 
-\multirow{-2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}}} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} \\ \hline
-\multicolumn{11}{|c|}{\textbf{Hard totals (excluding pairs)}} \\ \hline
-\textbf{12} & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
-\end{tabular}
-\end{table}
-
-
-\subsection{ Waar zal voor elke strategie de kans op winst stagneren, waar ligt het optimale punt van die bepaalde strategie?}
-Voor beide strategieën is het wel duidelijk dat de kans op winst vergroot als het aantal gespeelde rondes verhoogd, we zien  dat bij 100 rondes er nog altijd verlies kan gemaakt worden omdat het ook nog altijd afhangt van de kaarten die de speler en de dealer krijgt  maar als we dan meer rondes beginnen te spelen zoals 1000 kunnen we wel zien dat er winst begint te komen Hierdoor kunnen we zeggen dat de resultaten wel lichtjes beïnvloedbaar zijn maar dat men daar een groot aantal rondes voor moet spelen eer het resultaat zichtbaar wordt en er zekerheid is. Er moet ook rekening gehouden worden dat deze strategie\"{e}n goed zijn om gebruiken maar dat men ook nog rekening moet houden met de kaarten die zichtbaar zijn. Zo hebben we gezien dat iemand die alleen de strategie toepast zonder rekening te houden met de kaarten vaker verliest dan iemand die de kaarten telt en deze strategie\"{e}n gaat toe passen.
-
-\section{Toepassen van analyse op 1 variabele}
-\subsection{Basic strategie}
 
 \begin{table}[htbp]
 \caption{Analyse - Basic strategie}
@@ -249,26 +172,28 @@ Voor beide strategieën is het wel duidelijk dat de kans op winst vergroot als h
 \centering
 \begin{tabular}{|l|lll}
 \cline{1-1} \cline{3-4}
-\textbf{Waarnemingen:} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Median:}} & \multicolumn{1}{l|}{1039,75} \\ \cline{1-1} \cline{3-4} 
-1039,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Modus:}} & \multicolumn{1}{l|}{1042} \\ \cline{1-1} \cline{3-4} 
-1045 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Bereik:}} & \multicolumn{1}{l|}{16,5} \\ \cline{1-1} \cline{3-4} 
-1032,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q1:}} & \multicolumn{1}{l|}{1035,5} \\ \cline{1-1} \cline{3-4} 
-1040 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q2:}} & \multicolumn{1}{l|}{1039,75} \\ \cline{1-1} \cline{3-4} 
-1042 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q3:}} & \multicolumn{1}{l|}{1042} \\ \cline{1-1} \cline{3-4} 
-1034,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Variantie:}} & \multicolumn{1}{l|}{23,3525} \\ \cline{1-1} \cline{3-4} 
-1035 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Standaardafwijking:}} & \multicolumn{1}{l|}{4,832442} \\ \cline{1-1} \cline{3-4} 
-1042 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Gemidelde:}} & \multicolumn{1}{l|}{1039,65} \\ \cline{1-1} \cline{3-4} 
-1037 &  &  &  \\ \cline{1-1}
-1049 &  & \textbf{} &  \\ \cline{1-1}
+\textbf{Waarnemingen:} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Median:}} & \multicolumn{1}{l|}{1023} \\ \cline{1-1} \cline{3-4} 
+1017 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Modus:}} & \multicolumn{1}{l|}{1031,5} \\ \cline{1-1} \cline{3-4} 
+1020,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Bereik:}} & \multicolumn{1}{l|}{28,5} \\ \cline{1-1} \cline{3-4} 
+1031,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q1:}} & \multicolumn{1}{l|}{1012,125} \\ \cline{1-1} \cline{3-4} 
+1008 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q2:}} & \multicolumn{1}{l|}{1023} \\ \cline{1-1} \cline{3-4} 
+1031,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q3:}} & \multicolumn{1}{l|}{1031,5} \\ \cline{1-1} \cline{3-4} 
+1031,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Variantie:}} & \multicolumn{1}{l|}{106,1525} \\ \cline{1-1} \cline{3-4} 
+1025,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Standaardafwijking:}} & \multicolumn{1}{l|}{10,3030335} \\ \cline{1-1} \cline{3-4} 
+1033 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Gemidelde:}} & \multicolumn{1}{l|}{1021,35} \\ \cline{1-1} \cline{3-4} 
+1004,5 &  &  &  \\ \cline{1-1}
+1010,5 &  & \textbf{} &  \\ \cline{1-1}
 \end{tabular}
 \end{table}
+
 \begin{table}[htbp] \caption{Analyse - Basic strategie aangepast}
  \tiny
  \centering
  \begin{tabular}{|l|lll} \cline{1-1} \cline{3-4} \textbf{Waarnemingen:} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Median:}} & \multicolumn{1}{l|}{1029,25} \\ \cline{1-1} \cline{3-4}  1046,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Modus:}} & \multicolumn{1}{l|}{1020,5} \\ \cline{1-1} \cline{3-4}  1014 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Bereik:}} & \multicolumn{1}{l|}{32,5} \\ \cline{1-1} \cline{3-4}  1020,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q1:}} & \multicolumn{1}{l|}{1020,5} \\ \cline{1-1} \cline{3-4}  1030,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q2:}} & \multicolumn{1}{l|}{1029,25} \\ \cline{1-1} \cline{3-4}  1042 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q3:}} & \multicolumn{1}{l|}{1041,125} \\ \cline{1-1} \cline{3-4}  1038,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Variantie:}} & \multicolumn{1}{l|}{125,1225} \\ \cline{1-1} \cline{3-4}  1028 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Standaardafwijking:}} & \multicolumn{1}{l|}{11,1858169} \\ \cline{1-1} \cline{3-4}  1045 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Gemidelde:}} & \multicolumn{1}{l|}{1030,55} \\ \cline{1-1} \cline{3-4}  1020,5 &  &  &  \\ \cline{1-1} 1020 &  & \textbf{} &  \\ \cline{1-1} 
 \end{tabular}
 \end{table}
-\subsection{Perfect strategie}
+\subsubsection{Perfect strategie}
+Sinds deze strategie een verder gevorde strategie is van de basic hebben we hier met dezelfde aanpassingen gewerkt als bij de vorige. Ook hier hebben we weer gewerkt met 10 simulaties van 1000 wedstrijden. Hier hebben we dan waargenomen dat bij de aangepaste versie het resultaat beter was dan verwacht. Zo is ons mediaa, bereik, variantie en gemiddelde lager dan bij het orgineel. Hierdoor is onze winst groter en lijkt onze methode dan ook weer zeer aantrekkelijk. Maar om dit met zekerheid te kunnen zeggen zouden we meer simulaties moeten doen om er zeker van te zijn dat de zeldzame waarnemingen geen of weinig invloed zullen hebben op het resultaat
 
 \begin{table}[htbp]
 \caption{Analyse - Perfect strategie}
@@ -289,13 +214,49 @@ Voor beide strategieën is het wel duidelijk dat de kans op winst vergroot als h
 1016 &  & \textbf{} &  \\ \cline{1-1}
 \end{tabular}
 \end{table}
+\begin{table}[htbp]
+\caption{Analyse - Perfect strategie aangepast}
+\tiny
+\centering
+\begin{tabular}{|l|lll}
+\cline{1-1} \cline{3-4}
+\textbf{Waarnemingen:} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Median:}} & \multicolumn{1}{l|}{1032,25} \\ \cline{1-1} \cline{3-4} 
+1023,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Modus:}} & \multicolumn{1}{l|}{geen} \\ \cline{1-1} \cline{3-4} 
+1035,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Bereik:}} & \multicolumn{1}{l|}{30,5} \\ \cline{1-1} \cline{3-4} 
+1016,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q1:}} & \multicolumn{1}{l|}{1025} \\ \cline{1-1} \cline{3-4} 
+1037 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q2:}} & \multicolumn{1}{l|}{1032,25} \\ \cline{1-1} \cline{3-4} 
+1031,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q3:}} & \multicolumn{1}{l|}{1036,625} \\ \cline{1-1} \cline{3-4} 
+1029,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Variantie:}} & \multicolumn{1}{l|}{85,8525} \\ \cline{1-1} \cline{3-4} 
+1033 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Standaardafwijking:}} & \multicolumn{1}{l|}{9,26566242} \\ \cline{1-1} \cline{3-4} 
+1013 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Gemidelde:}} & \multicolumn{1}{l|}{1030,15} \\ \cline{1-1} \cline{3-4} 
+1043,5 &  &  &  \\ \cline{1-1}
+1038,5 &  & \textbf{} &  \\ \cline{1-1}
+\end{tabular}
+\end{table}  
+\begin{table}[htbp]
+\setlength{\tabcolsep}{3pt}
+\caption{Aangepaste rij in perfect strategie}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{10}{c|}{\textbf{Dealer's face-up card}} \\ \cline{2-11} 
+\multirow{-2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Player\\ hand\end{tabular}}} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} \\ \hline
+\multicolumn{11}{|c|}{\textbf{Hard totals (excluding pairs)}} \\ \hline
+\textbf{12} & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H & \cellcolor[HTML]{FE0000}H \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{ Waar zal voor elke strategie de kans op winst stagneren, waar ligt het optimale punt van die bepaalde strategie?}
+Voor de strategieën is het wel duidelijk dat de kans op winst vergroot als het aantal gespeelde rondes verhoogd, we zien  dat bij 100 rondes er nog altijd verlies kan gemaakt worden omdat het ook nog altijd afhangt van de kaarten die de speler en de dealer krijgt  maar als we dan meer rondes beginnen te spelen zoals 1000 kunnen we wel zien dat er winst begint te komen Hierdoor kunnen we zeggen dat de resultaten wel lichtjes beïnvloedbaar zijn maar dat men daar een groot aantal rondes voor moet spelen eer het resultaat zichtbaar wordt en er zekerheid is. Er moet ook rekening gehouden worden dat deze strategie\"{e}n goed zijn om gebruiken maar dat men ook nog rekening moet houden met de kaarten die zichtbaar zijn. Zo hebben we gezien dat iemand die alleen de strategie toepast zonder rekening te houden met de kaarten vaker verliest dan iemand die de kaarten telt en deze strategie\"{e}n gaat toe passen.
 
 \section{Conclusie}
-Ook al kunnen deze strategie\"{e}n de speler een voordeel geven tegenover de dealer toch is het nog altijd geen zekerheid dat men winst kan maken. Om de kans nog te vergroten moet de strategie\"{e}n toegepast worden samen met andere technieken zoals het tellen van kaarten. Maar nog  weten we niet alle variabelen die worden gebruikt in een casino. We kunnen dus concluderen dat all deze methodes de kansen wel zullen vergroten maar dat de kansen nog altijd in het voordeel van de casino's zullen zijn.
+Ook al kunnen deze strategie\"{e}n de speler een voordeel geven tegenover de dealer en het casino toch is het nog altijd geen zekerheid dat men winst zal maken. Om de kans te vergroten moet de strategie\"{e}n toegepast worden samen met andere technieken zoals het tellen van kaarten. Toch weten we niet welke technieken worden gebruikt in casino's om de kansen in hun voordeel te kunnen zwaaien. We kunnen dus concluderen dat all deze methodes de kansen wel zullen vergroten maar dat de kansen nog altijd in het voordeel van de casino's zullen zijn en het dus niet mogelijk zal zijn om ze te verslaan op lange termijn. Ook kubben we concluderen dat we mogelijks verbeteringen hebben gevonden op de bestaande strategieën maar dat hier eerst nog meerdere en grotere simulaties voor zullen moeten ondernomen worden voor we tot een besluit kunnen komen.
 
 \section*{Erkenning}
 
-We zouden graag alle auteurs willen bedanken van de bronnen die we hebben gebruikt en ook de maker van onze excel simulator die we hebben gevonden op het internet. Ook zouden we onze docent willen bedanken voor het helpen bij het vinden van een goede onderzoeksvraag.
+We zouden graag alle auteurs willen bedanken van de bronnen die we hebben gebruikt en ook de maker van de excel simulator die we hebben gevonden op het internet. Ook zouden we onze docent willen bedanken voor de begeleiding die we hebben gekregen tijdens het maken van deze opdracht.
 \nocite{*}
 
 \bibliographystyle{IEEEtran}
