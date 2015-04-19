@@ -163,21 +163,55 @@ De basic strategie houdt rekening met het totaal van de kaarten die de dealer he
 \subsection{Hoe kunnen we de strategie\"{e}n verbeteren?}
 \subsubsection{Basic strategie}
 Na het onderzoeken van de Basic strategie hebben we gepoogd deze strategie aan te passen met do hoop om een strategie te krijgen die een beter resultaat zou leveren op een kortere termijn want we wouden de situatie in een casino na bootsen. Na verschillende pogingen te hebben ondernomen hadden we een mogelijke strategie gevonden waar het resultaat er veel belovend uit zag. 
-\begin{figure}[hb]
-    \centering
-    \includegraphics[scale=0.37]{BasicAAngepastGoedResultaat.png}
-    \caption{goed resultaat}
-\end{figure}
+%\begin{figure}[hb]
+%    \centering
+%    \includegraphics[scale=0.37]{BasicAAngepastGoedResultaat.png}
+%    \caption{goed resultaat}
+%\end{figure}
+\begin{table}[htbp]
+\caption{Goed resultaat}
+\tiny
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{32CB00}}l 
+>{\columncolor[HTML]{32CB00}}r |}
+\hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Number of decks} & 12 \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Starting bankroll} & \$1000,00 \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}\# of hands to simulate} & 1000 \\ \hline
+ &  \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Ending bankroll} & \$1046,50 \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Rate return} & 104,65\% \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Profit/Loss per 100 hands} & \$4,65 \\ \hline
+\end{tabular}
+\end{table}
 
 
 
  
 Maar na meerdere simulaties hebben we kunnen zien dat het resultaat inconsistent is. En dat er een groot verschillen zaten tussen het beste en slechtste resultaat. Zo hebben wij een schommeling van 30 euro kunnen waarnemen. In tegenstelling tot de orgineële versie waar de schommeling beperkt is gebleven tot 10 euro tegenover het gemiddelde. Het is dan ook door dit verschil tussen het beste en slechtste resultaat dat onze strategie minder aantrekkelijk maakt. We hebben dan ook kunnen besluiten dat het niet mogelijk is om deze strategie te verbeteren en daarbij een consistent resultaat te verkrijgen.
-\begin{figure}[hb]
-    \centering
-    \includegraphics[scale=0.37]{BasicAangepastSlechtsteResultaat.png}
-    \caption{Slecht resultaat}
-\end{figure}
+%\begin{figure}[hb]
+%    \centering
+%    \includegraphics[scale=0.37]{BasicAangepastSlechtsteResultaat.png}
+%    \caption{Slecht resultaat}
+%\end{figure}
+\begin{table}[htbp]
+\caption{Slecht resultaat}
+\tiny
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{32CB00}}l 
+>{\columncolor[HTML]{32CB00}}r |}
+\hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Number of decks} & 12 \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Starting bankroll} & \$1000,00 \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}\# of hands to simulate} & 1000 \\ \hline
+ &  \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Ending bankroll} & \$1014,00 \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Rate return} & 101,40\% \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{32CB00}Profit/Loss per 100 hands} & \$1,40 \\ \hline
+\end{tabular}
+\end{table}
 \begin{table}[htbp]
 \setlength{\tabcolsep}{3pt}
 \caption{Aangepaste basic strategie}
@@ -217,6 +251,26 @@ Voor bijde strategieën is het wel duidelijk dat de kans op winst vergroot als h
 
 \section{Toepassen van analyse op 1 variabele}
 \subsection{Basic strategie}
+
+\begin{table}[htbp]
+\caption{Analyse - Basic strategie}
+\tiny
+\centering
+\begin{tabular}{|l|lll}
+\cline{1-1} \cline{3-4}
+\textbf{Waarnemingen:} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Median:}} & \multicolumn{1}{l|}{1039,75} \\ \cline{1-1} \cline{3-4} 
+1039,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Modus:}} & \multicolumn{1}{l|}{1042} \\ \cline{1-1} \cline{3-4} 
+1045 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Bereik:}} & \multicolumn{1}{l|}{16,5} \\ \cline{1-1} \cline{3-4} 
+1032,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q1:}} & \multicolumn{1}{l|}{1035,5} \\ \cline{1-1} \cline{3-4} 
+1040 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q2:}} & \multicolumn{1}{l|}{1039,75} \\ \cline{1-1} \cline{3-4} 
+1042 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Q3:}} & \multicolumn{1}{l|}{1042} \\ \cline{1-1} \cline{3-4} 
+1034,5 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Variantie:}} & \multicolumn{1}{l|}{23,3525} \\ \cline{1-1} \cline{3-4} 
+1035 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Standaardafwijking:}} & \multicolumn{1}{l|}{4,832442} \\ \cline{1-1} \cline{3-4} 
+1042 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Gemidelde:}} & \multicolumn{1}{l|}{1039,65} \\ \cline{1-1} \cline{3-4} 
+1037 &  &  &  \\ \cline{1-1}
+1049 &  & \textbf{} &  \\ \cline{1-1}
+\end{tabular}
+\end{table}
 
 \subsection{Perfect strategie}
 
